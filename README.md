@@ -1,3 +1,5 @@
 # KubeAI
 
-Rewrite first, Debug second is our working guideline.
+Never debug, Always rewrite is our working guideline.
+
+To build tools for Intelligent automation. 
