@@ -34,8 +34,8 @@ import (
 	metricsserver "sigs.k8s.io/controller-runtime/pkg/metrics/server"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 
-	kubeaiv1beta1 "kubeai/api/v1beta1"
-	"kubeai/internal/controller"
+	kubeaiv1beta1 "opencanon.ai/api/v1beta1"
+	"opencanon.ai/internal/controller"
 	//+kubebuilder:scaffold:imports
 )
 
@@ -76,7 +76,7 @@ func main() {
 
 	// if the enable-http2 flag is false (the default), http/2 should be disabled
 	// due to its vulnerabilities. More specifically, disabling http/2 will
-	// prevent from being vulnerable to the HTTP/2 Stream Cancellation and
+	// prevent from being vulnerable to the HTTP/2 Stream Cancelation and
 	// Rapid Reset CVEs. For more information see:
 	// - https://github.com/advisories/GHSA-qppj-fm5r-hxr3
 	// - https://github.com/advisories/GHSA-4374-p667-p6c8
@@ -104,7 +104,7 @@ func main() {
 		WebhookServer:          webhookServer,
 		HealthProbeBindAddress: probeAddr,
 		LeaderElection:         enableLeaderElection,
-		LeaderElectionID:       "a73bcfc6.my.domain",
+		LeaderElectionID:       "74180c2c.my.domain",
 		// LeaderElectionReleaseOnCancel defines if the leader should step down voluntarily
 		// when the Manager ends. This requires the binary to immediately end when the
 		// Manager is stopped, otherwise, this setting is unsafe. Setting this significantly
@@ -127,38 +127,6 @@ func main() {
 		Scheme: mgr.GetScheme(),
 	}).SetupWithManager(mgr); err != nil {
 		setupLog.Error(err, "unable to create controller", "controller", "Kubeplaceholder11")
-		os.Exit(1)
-	}
-
-	if err = (&controller.Kubeplaceholder22Reconciler{
-		Client: mgr.GetClient(),
-		Scheme: mgr.GetScheme(),
-	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "unable to create controller", "controller", "Kubeplaceholder22")
-		os.Exit(1)
-	}
-
-	if err = (&controller.Kubeplaceholder33Reconciler{
-		Client: mgr.GetClient(),
-		Scheme: mgr.GetScheme(),
-	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "unable to create controller", "controller", "Kubeplaceholder33")
-		os.Exit(1)
-	}
-
-	if err = (&controller.Kubeplaceholder44Reconciler{
-		Client: mgr.GetClient(),
-		Scheme: mgr.GetScheme(),
-	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "unable to create controller", "controller", "Kubeplaceholder44")
-		os.Exit(1)
-	}
-
-	if err = (&controller.KubeopsReconciler{
-		Client: mgr.GetClient(),
-		Scheme: mgr.GetScheme(),
-	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "unable to create controller", "controller", "Kubeops")
 		os.Exit(1)
 	}
 	//+kubebuilder:scaffold:builder

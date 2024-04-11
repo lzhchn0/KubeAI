@@ -1,0 +1,54 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.14.0
+  name: kubeplaceholder11s.kubeai.my.domain
+spec:
+  group: kubeai.my.domain
+  names:
+    kind: Kubeplaceholder11
+    listKind: Kubeplaceholder11List
+    plural: kubeplaceholder11s
+    singular: kubeplaceholder11
+  scope: Namespaced
+  versions:
+  - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        description: Kubeplaceholder11 is the Schema for the kubeplaceholder11s API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: Kubeplaceholder11Spec defines the desired state of Kubeplaceholder11
+            properties:
+              foo:
+                description: Foo is an example field of Kubeplaceholder11. Edit kubeplaceholder11_types.go
+                  to remove/update
+                type: string
+            type: object
+          status:
+            description: Kubeplaceholder11Status defines the observed state of Kubeplaceholder11
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

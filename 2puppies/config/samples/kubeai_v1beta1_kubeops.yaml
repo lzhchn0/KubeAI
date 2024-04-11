@@ -1,0 +1,12 @@
+apiVersion: kubeai.my.domain/v1beta1
+kind: Kubeops
+metadata:
+  labels:
+    app.kubernetes.io/name: kubeops
+    app.kubernetes.io/instance: kubeops-sample
+    app.kubernetes.io/part-of: a0
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: a0
+  name: kubeops-sample
+spec:
+  # TODO(user): Add fields here

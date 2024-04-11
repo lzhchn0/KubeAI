@@ -1,0 +1,12 @@
+apiVersion: kubeai.my.domain/v1beta1
+kind: Kubeplaceholder11
+metadata:
+  labels:
+    app.kubernetes.io/name: kubeplaceholder11
+    app.kubernetes.io/instance: kubeplaceholder11-sample
+    app.kubernetes.io/part-of: a1
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: a1
+  name: kubeplaceholder11-sample
+spec:
+  # TODO(user): Add fields here

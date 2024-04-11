@@ -1,0 +1,31 @@
+# permissions for end users to edit kubeops.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: kubeops-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: a0
+    app.kubernetes.io/part-of: a0
+    app.kubernetes.io/managed-by: kustomize
+  name: kubeops-editor-role
+rules:
+- apiGroups:
+  - kubeai.my.domain
+  resources:
+  - kubeops
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - kubeai.my.domain
+  resources:
+  - kubeops/status
+  verbs:
+  - get

@@ -1,0 +1,58 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - kubeai.my.domain
+  resources:
+  - kubeops
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - kubeai.my.domain
+  resources:
+  - kubeops/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - kubeai.my.domain
+  resources:
+  - kubeops/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - kubeai.my.domain
+  resources:
+  - kubeplaceholder11s
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - kubeai.my.domain
+  resources:
+  - kubeplaceholder11s/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - kubeai.my.domain
+  resources:
+  - kubeplaceholder11s/status
+  verbs:
+  - get
+  - patch
+  - update
